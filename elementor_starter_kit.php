@@ -13,6 +13,7 @@
  * Elementor Pro tested up to: 3.20.0
  */
 
+
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
@@ -154,8 +155,8 @@ final class Elementor_Starter_Kit {
         // Register widget categories
         add_action('elementor/elements/categories_registered', [$this, 'register_categories']);
 
-        // Register widgets
-        add_action('elementor/widgets/register', [$this, 'register_widgets']);
+        // Initialize Widgets Manager (auto-discovers and registers all widgets)
+        $this->init_widgets_manager();
 
         // Register controls
         add_action('elementor/controls/register', [$this, 'register_controls']);
@@ -170,11 +171,18 @@ final class Elementor_Starter_Kit {
      * Include required files
      */
     private function include_files() {
-        // Include widget files
-        require_once(__DIR__ . '/includes/widgets/class-example-widget.php');
-        require_once(__DIR__ . '/includes/widgets/class-advanced-widget.php');
+        // Include Widgets Manager
+        require_once(__DIR__ . '/includes/class-widgets-manager.php');
         
-        // Add more widget includes here as you create them
+        // Note: Individual widget files are now auto-loaded by Widgets Manager
+        // No need to manually require widget files anymore!
+    }
+
+    /**
+     * Initialize Widgets Manager
+     */
+    private function init_widgets_manager() {
+        new \Elementor_Starter_Kit\Widgets_Manager();
     }
 
     /**
@@ -188,19 +196,6 @@ final class Elementor_Starter_Kit {
                 'icon' => 'fa fa-plug',
             ]
         );
-    }
-
-    /**
-     * Register Widgets
-     */
-    public function register_widgets($widgets_manager) {
-        // Register Example Widget
-        $widgets_manager->register(new \Elementor_Starter_Kit\Widgets\Example_Widget());
-        
-        // Register Advanced Widget
-        $widgets_manager->register(new \Elementor_Starter_Kit\Widgets\Advanced_Widget());
-
-        // Add more widget registrations here
     }
 
     /**
