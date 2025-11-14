@@ -1,0 +1,30 @@
+/**
+ * Elementor Starter Kit - Editor Styles
+ * 
+ * Styles that only apply in the Elementor editor
+ */
+
+/* Custom widget icons styling in panel */
+.elementor-element .icon .eicon-text {
+    color: #9b59b6;
+}
+
+.elementor-element .icon .eicon-bullet-list {
+    color: #3498db;
+}
+
+/* Preview styling adjustments */
+.elementor-widget-starter_example_widget .starter-widget-wrapper,
+.elementor-widget-starter_advanced_widget .starter-features-grid {
+    min-height: 50px;
+}
+
+/* Empty state for repeater items */
+.starter-features-grid:empty::before {
+    content: 'Add features using the repeater control';
+    display: block;
+    padding: 20px;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
