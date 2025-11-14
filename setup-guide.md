@@ -358,4 +358,22 @@ GPL v2 or later
 
 ---
 
+## Credits
+
+Developed by the **AmrShah**
+
+For support, improvements, or contributions, please open an issue or submit a pull request on GitHub.
+
+## Developer Contact
+
+For professional WordPress development, performance optimization, or custom plugin work,  
+contact **Amr Shah** - creator of this plugin and lead developer at [AlamiaSoft](https://amrshah.github.io).
+
+- **Website:** [https://amrshah.github.io](https://amrshah.github.io)  
+- **GitHub:** [https://github.com/amrshah](https://github.com/amrshah)  
+- **Email:** amr.shah@gmail.com  
+
+
+We build scalable tools, custom dashboards, and performance-focused WordPress/custom solutions for businesses worldwide.
+
 **Happy Widget Building! **
